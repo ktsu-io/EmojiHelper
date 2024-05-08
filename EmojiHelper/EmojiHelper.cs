@@ -1,6 +1,6 @@
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
-namespace EmojiHelper;
+namespace ktsu.io.EmojiHelper;
 
 public static class EmojiHelper
 {
