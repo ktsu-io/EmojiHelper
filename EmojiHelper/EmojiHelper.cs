@@ -2,13 +2,19 @@
 
 namespace ktsu.io.EmojiHelper;
 
+using System.Reflection;
+
 public static class EmojiHelper
 {
 	private static Dictionary<Codepoint, string> EmojiNames { get; } = new();
 
 	static EmojiHelper()
 	{
-		string textData = File.ReadAllText("emoji-zwj-sequences.txt");
+		// get embedded resource
+		var assembly = Assembly.GetExecutingAssembly();
+		using var stream = assembly.GetManifestResourceStream("EmojiHelper.emoji-zwj-sequences.txt");
+		using var reader = new StreamReader(stream!);
+		string textData = reader.ReadToEnd();
 		string[] lines = textData.Split('\n');
 		foreach (string line in lines)
 		{
