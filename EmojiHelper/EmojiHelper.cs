@@ -29,6 +29,7 @@ public static class EmojiHelper
 		}
 	}
 
+	public static string GetEmojiName(string codepoint) => GetEmojiName(new Codepoint(codepoint));
 	public static string GetEmojiName(Codepoint codepoint) =>
 		EmojiNames.TryGetValue(codepoint, out string? name) ? name : "Unknown";
 }
