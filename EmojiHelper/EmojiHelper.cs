@@ -4,7 +4,7 @@ namespace ktsu.io.EmojiHelper;
 
 public static class EmojiHelper
 {
-	private static Dictionary<Codepoint, string> EmojiNames { get; } = new();
+	private static Dictionary<Codepoint, string> EmojiNames { get; } = [];
 
 	static EmojiHelper()
 	{
@@ -26,6 +26,8 @@ public static class EmojiHelper
 
 			string codepoint = parts[0].Trim();
 			string cldrName = parts[2].Trim();
+			parts = cldrName.Split('#');
+			cldrName = parts[0].Trim();
 			EmojiNames.Add(new Codepoint(codepoint), cldrName);
 		}
 	}
