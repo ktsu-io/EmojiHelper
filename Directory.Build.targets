@@ -86,7 +86,7 @@
   <ItemGroup Condition="$(IsTest) == true">
     <Using Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
     <ProjectReference Include="..\$(SolutionName)\$(SolutionName).csproj" />
-    <PackageReference Include="coverlet.collector" Version="6.0.3" />
+    <PackageReference Include="coverlet.collector" Version="6.0.4" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
     <PackageReference Include="MSTest.TestAdapter" Version="3.7.1" />
     <PackageReference Include="MSTest.TestFramework" Version="3.7.1" />
